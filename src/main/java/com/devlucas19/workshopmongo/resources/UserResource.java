@@ -32,7 +32,7 @@ public class UserResource {
 	}
 	
 	@RequestMapping( value="/{id}", method=RequestMethod.GET )
-	public ResponseEntity <UserDTO> findById(@PathVariable String id ) {
+	public ResponseEntity <UserDTO> findById( @PathVariable String id ) {
 		UserEntity obj = service.findById(id);
 		return ResponseEntity.ok().body(new UserDTO( obj ));
 	}
@@ -46,7 +46,7 @@ public class UserResource {
 	}
 	
 	@RequestMapping( value="/{id}", method=RequestMethod.DELETE )
-	public ResponseEntity <Void> delete(@PathVariable String id ) {
+	public ResponseEntity <Void> delete( @PathVariable String id ) {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
